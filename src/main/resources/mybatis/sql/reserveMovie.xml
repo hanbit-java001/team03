@@ -4,15 +4,44 @@
 <mapper namespace="reserveMovie">
 
 	<delete id="deleteReservation" parameterType="int">
+		DELETE FROM RESERVATION
+		WHERE RESERVE_ID = #{reserveId}
 	</delete>
 
 	<insert id="insertReservation" parameterType="ReserveMovieVO">
+		INSERT INTO RESERVATION
+			(RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID)
+		VALUES
+			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{userId})
 	</insert>
 
 	<select id="selectReservation" parameterType="int" resultType="ReserveMovieVO">
+		SELECT RESERVATION.RESERVE_ID, THEATER.THEATER_NAME,
+			   TIMETABLE.START_TIME, TIMETABLE.END_TIME,
+			   SEAT.SEAT_NUMBER, CINEMA.CINEMA_NAME, MOVIE.MOVIE_NAME
+		FROM RESERVATION
+		INNER JOIN TIMETABLE
+		ON RESERVATION.TIME_ID = TIMETABLE.TIME_ID
+		INNER JOIN MOVIE
+		ON TIMETABLE.MOVIE_ID = MOVIE.MOVIE_ID
+		INNER JOIN THEATER
+		ON TIMETABLE.THEATER_ID = THEATER.THEATER_ID
+		INNER JOIN CINEMA
+		ON CINEMA.CINEMA_ID = THEATER.CINEMA_ID
+		INNER JOIN SEAT
+		ON THEATER.THEATER_ID = SEAT.THEATER_ID
+		WHERE RESERVATION.RESERVE_ID = #{reserveId}
+
 	</select>
 
 	<select id="selectReservations" parameterType="String" resultType="ReserveMovieVO">
+		SELECT RESERVATION.RESERVE_ID, TIMETABLE.START_TIME, MOVIE.MOVIE_NAME
+		FROM RESERVATION
+		INNER JOIN TIMETABLE
+		ON RESERVATION.TIME_ID = TIMETABLE.TIME_ID
+		INNER JOIN MOVIE
+		ON TIMETABLE.MOVIE_ID = MOVIE.MOVIE_ID
+		WHERE RESERVATION.USER_ID = #{userId}
 	</select>
 
 </mapper>
