@@ -15,15 +15,15 @@ public class ReserveMovieService {
 	@Autowired
 	private ReserveMovieDAO reserveMovieDAO;
 
-	public int reserveMovie(ReserveMovieVO reserveMovieVO){
+	public int reserveMovie(ReserveMovieVO reserveMovie){
 
-		int resultReservation = reserveMovieDAO.insertReservation(reserveMovieVO);
+		int resultReservation = reserveMovieDAO.insertReservation(reserveMovie);
 
 		if(resultReservation <= 0){
 			throw new RuntimeException("예매가 정상적으로 이루어지지 않았습니다.");
 		}
 
-		return reserveMovieVO.getReserveId();
+		return reserveMovie.getReserveId();
 	}
 
 

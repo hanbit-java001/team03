@@ -9,6 +9,7 @@
 
 	<typeAliases>
 		<typeAlias type="com.hanbit.team03.core.vo.ReserveMovieVO" alias="ReserveMovieVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.DetailReserveDataVO" alias="DetailReserveDataVO" />
 	</typeAliases>
 
 </configuration>

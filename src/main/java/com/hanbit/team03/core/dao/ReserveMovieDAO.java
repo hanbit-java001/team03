@@ -19,21 +19,27 @@ public class ReserveMovieDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int insertReservation(ReserveMovieVO reserveMovieVO){
-		return 0;
+	public int insertReservation(ReserveMovieVO reserveMovie){
+		LOGGER.debug("인서트 예매");
+		int result = sqlSession.insert("reserveMovie.insertReservation", reserveMovie);
+		return result;
 	}
 
 	public int deleteReservation(int reserveId){
-		return 0;
+		LOGGER.debug("딜리트 예매");
+		int result = sqlSession.delete("reserveMovie.deleteReservation", reserveId);
+		return result;
 	}
 
 	public DetailReserveDataVO selectReservation(int reserveId){
-
+		DetailReserveDataVO result = (DetailReserveDataVO) sqlSession.selectList("reserveMovie.selectReservation", reserveId);
 		return null;
 	}
 
 	public List<ReserveMovieVO> selectReservations(String userId){
-		return null;
+		LOGGER.debug("셀렉트 예매들");
+		List<ReserveMovieVO> result = sqlSession.selectList("reserveMovie.selectReservations", userId);
+		return result;
 	}
 
 

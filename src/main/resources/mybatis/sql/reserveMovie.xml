@@ -15,10 +15,20 @@
 			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{userId})
 	</insert>
 
-	<select id="selectReservation" parameterType="int" resultType="ReserveMovieVO">
-		SELECT RESERVATION.RESERVE_ID, THEATER.THEATER_NAME,
-			   TIMETABLE.START_TIME, TIMETABLE.END_TIME,
-			   SEAT.SEAT_NUMBER, CINEMA.CINEMA_NAME, MOVIE.MOVIE_NAME
+	<resultMap id="DetailReserveDataType" type="DetailReserveDataVO">
+	    <id property="reserveId" column="RESERVE_ID" />
+	    <result property="cinemaName" column="CINEMA_NAME"/>
+	    <result property="movieName" column="MOVIE_NAME"/>
+	    <result property="theaterName" column="THEATER_NAME"/>
+	    <result property="seatNumber" column="SEAT_NUMBER"/>
+	    <result property="startTime" column="START_TIME"/>
+	    <result property="endTime" column="END_TIME"/>
+	</resultMap>
+
+	<select id="selectReservation" parameterType="int" resultType="DetailReserveDataVO">
+		SELECT RESERVATION.RESERVE_ID AS RESERVE_ID, THEATER.THEATER_NAME AS THEATER_NAME,
+			   TIMETABLE.START_TIME AS START_TIME, TIMETABLE.END_TIME AS END_TIME,
+			   SEAT.SEAT_NUMBER AS SEAT_NUMBER, CINEMA.CINEMA_NAME AS CINEMA_NAME, MOVIE.MOVIE_NAME AS MOVIE_NAME
 		FROM RESERVATION
 		INNER JOIN TIMETABLE
 		ON RESERVATION.TIME_ID = TIMETABLE.TIME_ID
