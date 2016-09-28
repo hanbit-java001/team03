@@ -3,16 +3,16 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reserveMovie">
 
-	<select id="countMember" parameterType="string" resultType="int">
-	</select>
+	<delete id="deleteReservation" parameterType="int">
+	</delete>
 
-	<insert id="insertMember" parameterType="MemberVO">
+	<insert id="insertReservation" parameterType="ReserveMovieVO">
 	</insert>
 
-	<select id="selectPassword" parameterType="int" resultType="string">
+	<select id="selectReservation" parameterType="int" resultType="ReserveMovieVO">
 	</select>
 
-	<update id="updateMember" parameterType="MemberVO">
-	</update>
+	<select id="selectReservations" parameterType="String" resultType="ReserveMovieVO">
+	</select>
 
 </mapper>
