@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.hanbit.team03.core.dao.ReserveMovieDAO;
 import com.hanbit.team03.core.vo.ReserveMovieVO;
-import com.hanbit.team03.core.vo.SelectDataVO;
+import com.hanbit.team03.core.vo.DetailReserveDataVO;
 
 @Service
 public class ReserveMovieService {
@@ -45,7 +45,7 @@ public class ReserveMovieService {
 	}
 
 
-	public SelectDataVO getDetailReservation(int reserveId){
+	public DetailReserveDataVO getDetailReservation(int reserveId){
 
 		return reserveMovieDAO.selectReservation(reserveId);
 	}

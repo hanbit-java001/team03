@@ -3,7 +3,7 @@ package com.hanbit.team03.core.vo;
 public class TheaterVO {
 	private int theaterId;
 	private String cinemaId;
-	private String cinemaName;
+	private String theaterName;
 
 	public int getTheaterId() {
 		return theaterId;
@@ -17,12 +17,13 @@ public class TheaterVO {
 	public void setCinemaId(String cinemaId) {
 		this.cinemaId = cinemaId;
 	}
-	public String getCinemaName() {
-		return cinemaName;
+	public String getTheaterName() {
+		return theaterName;
 	}
-	public void setCinemaName(String cinemaName) {
-		this.cinemaName = cinemaName;
+	public void setTheaterName(String theaterName) {
+		this.theaterName = theaterName;
 	}
+
 
 
 }
