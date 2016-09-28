@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hanbit.team03.core.vo.ReserveMovieVO;
+import com.hanbit.team03.core.vo.SelectDataVO;
 
 @Repository
 public class ReserveMovieDAO {
@@ -26,7 +27,7 @@ public class ReserveMovieDAO {
 		return 0;
 	}
 
-	public ReserveMovieVO selectReservation(int reserveId){
+	public SelectDataVO selectReservation(int reserveId){
 		return null;
 	}
 
