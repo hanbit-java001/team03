@@ -9,7 +9,13 @@
 
 	<typeAliases>
 		<typeAlias type="com.hanbit.team03.core.vo.ReserveMovieVO" alias="ReserveMovieVO" />
-		<typeAlias type="com.hanbit.team03.core.vo.DetailReserveDataVO" alias="DetailReserveDataVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.ReserveDetailDataVO" alias="ReserveDetailDataVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.CinemaVO" alias="CinemaVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.MovieScheduleVO" alias="MovieScheduleVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.MovieVO" alias="MovieVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.SeatVO" alias="SeatVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.UserVO" alias="UserVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.ReserveDataListVO" alias="ReserveDataListVO" />
 	</typeAliases>
 
 </configuration>
