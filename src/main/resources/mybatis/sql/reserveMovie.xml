@@ -12,35 +12,73 @@
 		INSERT INTO RESERVATION
 			(RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID)
 		VALUES
-			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{memberId})
+			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{userId})
 	</insert>
 
 	<select id="selectReservation" parameterType="int" resultType="ReserveDetailDataVO">
-			SELECT RESERVATION.RESERVE_ID AS RESERVE_ID, THEATER.THEATER_NAME AS theaterName,
-				   TIMETABLE.START_TIME AS startTime, SEAT.SEAT_NUMBER AS seatNumber,
-				   CINEMA.CINEMA_NAME AS cinemaName, MOVIE.MOVIE_NAME AS movieName
-			  FROM RESERVATION
-		INNER JOIN TIMETABLE
-			    ON RESERVATION.TIME_ID = TIMETABLE.TIME_ID
-	 	INNER JOIN MOVIE
-				ON TIMETABLE.MOVIE_ID = MOVIE.MOVIE_ID
-		INNER JOIN THEATER
-				ON TIMETABLE.THEATER_ID = THEATER.THEATER_ID
-		INNER JOIN CINEMA
-				ON CINEMA.CINEMA_ID = THEATER.CINEMA_ID
-		INNER JOIN SEAT
-				ON THEATER.THEATER_ID = SEAT.THEATER_ID
-		     WHERE RESERVATION.RESERVE_ID = #{reserveId} AND RESERVATION.SEAT_ID=SEAT.SEAT_ID;
+	SELECT  tcttmrs.RESERVE_ID,
+	    tcttmrs.USER_ID,
+		tcttmrs.CINEMA_NAME,
+		tcttmrs.THEATER_NAME,
+		tcttmrs.MOVIE_NAME,
+		tcttmrs.START_TIME,
+		tcttmrs.SEAT_NUMBER
+	FROM(
+		SELECT tcttmr.RESERVE_ID,
+			   tcttmr.USER_ID,
+			   tcttmr.CINEMA_NAME,
+			   tcttmr.THEATER_NAME,
+			   tcttmr.MOVIE_NAME,
+			   tcttmr.START_TIME,
+			   s.SEAT_NUMBER
+
+		FROM(
+
+			SELECT tcttm.THEATER_NAME,
+				   tcttm.THEATER_ID,
+				   tcttm.CINEMA_NAME,
+				   tcttm.MOVIE_NAME,
+				   tcttm.START_TIME,
+				   tcttm.TIME_ID,
+				   r.SEAT_ID,
+				   r.RESERVE_ID,
+				   r.USER_ID
+				FROM
+					(SELECT tttm.THEATER_NAME,
+							tttm.THEATER_ID,
+							c.CINEMA_NAME,
+							tttm.MOVIE_NAME,
+							tttm.START_TIME,
+							tttm.TIME_ID
+					FROM CINEMA c,
+							(SELECT ttm.MOVIE_NAME,
+									ttm.START_TIME,
+									ttm.TIME_ID,
+									t.THEATER_ID,
+									t.THEATER_NAME,
+									t.CINEMA_ID
+							FROM
+									(SELECT m.MOVIE_NAME,
+											tt.START_TIME,
+											tt.THEATER_ID,
+											tt.TIME_ID
+									FROM TIMETABLE tt, MOVIE m
+									WHERE tt.MOVIE_ID = m.MOVIE_ID) ttm, THEATER t
+							WHERE ttm.THEATER_ID = t.THEATER_ID) tttm
+					WHERE tttm.CINEMA_ID = c.CINEMA_ID) tcttm, RESERVATION r
+			WHERE r.TIME_ID = tcttm.TIME_ID) tcttmr , SEAT s
+		WHERE tcttmr.SEAT_ID = s.SEAT_ID) tcttmrs
+	WHERE tcttmrs.USER_ID = #{reserveId}
 	</select>
 
 	<select id="selectReservations" parameterType="String" resultType="ReserveDataListVO">
-		SELECT RESERVATION.RESERVE_ID AS reserveId, TIMETABLE.START_TIME AS startTime, MOVIE.MOVIE_NAME AS movieName
-		FROM RESERVATION
-		INNER JOIN TIMETABLE
-		ON RESERVATION.TIME_ID = TIMETABLE.TIME_ID
-		INNER JOIN MOVIE
-		ON TIMETABLE.MOVIE_ID = MOVIE.MOVIE_ID
-		WHERE RESERVATION.USER_ID = #{memberId}
+		SELECT RT.RESERVE_ID, RT.START_TIME, M.MOVIE_NAME, RT.USER_ID
+		  FROM
+	      	  (SELECT R.RESERVE_ID RESERVE_ID, T.START_TIME START_TIME, T.MOVIE_ID, R.USER_ID
+                 FROM RESERVATION R, TIMETABLE T
+        		WHERE R.TIME_ID = T.TIME_ID) RT, MOVIE M
+		 WHERE RT.MOVIE_ID = M.MOVIE_ID
+  		   AND RT.USER_ID = #{userId}
 	</select>
 
 </mapper>
