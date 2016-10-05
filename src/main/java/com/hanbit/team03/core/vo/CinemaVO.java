@@ -3,7 +3,16 @@ package com.hanbit.team03.core.vo;
 public class CinemaVO {
 	private int cinemaId;
 	private String cinemaName;
+	private String cinemaAddress;
 
+
+
+	public String getCinemaAddress() {
+		return cinemaAddress;
+	}
+	public void setCinemaAddress(String cinemaAddress) {
+		this.cinemaAddress = cinemaAddress;
+	}
 	public int getCinemaId() {
 		return cinemaId;
 	}

@@ -1,0 +1,90 @@
+html, body {
+	height:100%;
+	background-color: #FFFFF0;
+}
+
+.main-top-container {
+	height : 160px;
+
+}
+
+.top-login {
+	height: 10px;
+	right: 0px;
+	list-style: none;
+	display: inline-block;
+}
+
+.top-login ul {
+	list-style: none;
+	position: absolute;
+	right:0px;
+}
+
+.top-login ul li {
+	display: inline-block;
+	color: #B19CD9;
+	padding: 10px;
+}
+
+.top-logo {
+	text-align: center;
+	padding : 30px;
+	font-size: 30px;
+}
+
+.top-menu {
+	height: 200px;
+	position: relative;
+	text-align: center;
+	padding: 0px;
+	margin: 0 auto;
+
+}
+
+.top-menu ul {
+	display: inline-block;
+	font-size: 18px;
+
+}
+
+.top-menu ul li{
+	display: inline-block;
+	padding: 7px;
+}
+
+
+.main-content {
+	position: relative;
+	height:350px;
+	background-image: url("../images/mainimage.jpg");
+	background-position:center;
+	background-repeat: no-repeat;
+	width:100%;
+}
+
+.main-content-main {
+	height:290px;
+}
+
+
+.main-content-background {
+	color: black;
+	font-weight:bold;
+	font-size: 35px;
+	text-align:center;
+	height: 200px;
+	bottom:0;
+}
+
+.main-bottom {
+	position: absolute;
+	bottom:0px;
+	width:100%;
+	z-index:10px;
+	height: 30px;
+	text-align: center;
+}
+
+
+
