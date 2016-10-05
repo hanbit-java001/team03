@@ -5,14 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class TopmenuController {
+public class MovieController {
 
-	@RequestMapping("/topmenu/menu")
-	public String topMenu(Model model) {
+	@RequestMapping("/movie/main")
+	public String movie(Model model) {
 
-		return "topmenu/menu";
+		return "movie/main";
 	}
 
-	
+
 
 }
