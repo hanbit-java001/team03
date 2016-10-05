@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>한빛 영화관</title>
+<title>스위트샵</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
@@ -38,10 +38,7 @@
 		</div>
 	</div>
 	<div class="main-content">
-		<div class="main-content-main"></div>
-		<div class="main-content-background">
 		정성을 다하겠습니다.
-		</div>
 	</div>
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
