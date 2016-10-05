@@ -16,6 +16,7 @@
 		<typeAlias type="com.hanbit.team03.core.vo.SeatVO" alias="SeatVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.UserVO" alias="UserVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.ReserveDataListVO" alias="ReserveDataListVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.TimeTableVO" alias="TimeTableVO" />
 	</typeAliases>
 
 </configuration>

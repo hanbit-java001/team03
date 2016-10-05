@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movieSchedule">
+
+<!-- 	<delete id="deleteReservation" parameterType="int"> -->
+<!-- 		DELETE FROM RESERVATION -->
+<!-- 		WHERE RESERVE_ID = #{reserveId} -->
+<!-- 	</delete> -->
+
+<!-- 	<insert id="insertReservation" parameterType="ReserveMovieVO"> -->
+<!-- 		INSERT INTO RESERVATION -->
+<!-- 			(RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID) -->
+<!-- 		VALUES -->
+<!-- 			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{userId}) -->
+<!-- 	</insert> -->
+
+	<select id="selectMovieSchedule" parameterType="map" resultType="TimeTableVO">
+	<![CDATA[
+		SELECT THEATER_NAME, START_TIME
+		  FROM (
+			SELECT THEATER_NAME, MOVIE_ID, START_TIME
+			  FROM	(
+				SELECT THEATER_NAME, THEATER_ID
+				  FROM THEATER T
+				 WHERE T.CINEMA_ID = #{cinemaId}
+				) ct, TIMETABLE t
+			 WHERE ct.THEATER_ID = t.THEATER_ID
+			) ctt, MOVIE m
+		 WHERE #{movieId}=ctt.MOVIE_ID
+		   AND #{movieId}= m.MOVIE_ID
+	]]>
+	</select>
+
+<!-- 수정해야돼 -->
+	<select id="selectCountEmptySeat" parameterType="map" resultType="int">
+	<![CDATA[
+		SELECT  COUNT(*) EMPTY_SEAT
+		  FROM(
+				SELECT ttt.THEATER_ID, ttt.THEATER_NAME, c.CINEMA_NAME
+				  FROM(
+						SELECT t.THEATER_ID , t.THEATER_NAME, t.CINEMA_ID
+						FROM THEATER t,
+							(SELECT THEATER_ID
+							FROM TIMETABLE
+							WHERE MOVIE_ID = #{movieId}
+							) tt
+						WHERE t.THEATER_ID = tt.THEATER_ID
+						) ttt, CINEMA c
+				 WHERE ttt.CINEMA_ID= c.CINEMA_ID AND c.CINEMA_ID = #{cinemaId}
+				 ) tttc, SEAT s
+		 WHERE tttc.THEATER_ID = s.THEATER_ID AND (s.SEAT_RESERVE_STATE IS NULL OR s.SEAT_RESERVE_STATE = 0);
+	]]>
+	</select>
+</mapper>

@@ -30,14 +30,11 @@ public class ReserveMovieDAO {
 
 	public int deleteReservation(int reserveId){
 		LOGGER.debug("딜리트 예매");
-		int result = sqlSession.delete("reserveMovie.deleteReservation", reserveId);
-		return result;
+		return sqlSession.delete("reserveMovie.deleteReservation", reserveId);
 	}
 
 	public ReserveDetailDataVO selectReservation(int reserveId){
-		ReserveDetailDataVO result = sqlSession.selectOne("reserveMovie.selectReservation", reserveId);
-		System.out.println("DAO반환값"+result);
-		return result;
+		return sqlSession.selectOne("reserveMovie.selectReservation", reserveId);
 	}
 
 	public List<ReserveDataListVO> selectReservations(String userId){
@@ -45,6 +42,17 @@ public class ReserveMovieDAO {
 		List<ReserveDataListVO> result = sqlSession.selectList("reserveMovie.selectReservations", userId);
 		return result;
 	}
+
+//	public ReserveMovieVO selectReserveProperties(String movieName, String cinemaName, String theater, String seatNumber){
+//		Map params = new HashMap();
+//		params.put("movieName", movieName);
+//		params.put("cinemaName", cinemaName);
+//		params.put("theater", theater);
+//		params.put("seatNumber", seatNumber);
+//
+//		ReserveMovieVO result = sqlSession.selectOne("selectReserveProperties", params);
+//		return result;
+//	}
 
 
 

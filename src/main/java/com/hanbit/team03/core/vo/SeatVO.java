@@ -4,7 +4,14 @@ public class SeatVO {
 	private int seatId;
 	private int theaterId;
 	private String seatNumber;		//A11, K11, 이런식으로
+	private int reserVation;
 
+	public int getReserVation() {
+		return reserVation;
+	}
+	public void setReserVation(int reserVation) {
+		this.reserVation = reserVation;
+	}
 	public int getSeatId() {
 		return seatId;
 	}
