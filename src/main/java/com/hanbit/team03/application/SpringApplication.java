@@ -9,10 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Log4jConfigurer;
 
-import com.hanbit.team03.core.service.ReserveMovieService;
-import com.hanbit.team03.core.vo.ReserveDataListVO;
-import com.hanbit.team03.core.vo.ReserveDetailDataVO;
-import com.hanbit.team03.core.vo.ReserveMovieVO;
+import com.hanbit.team03.core.service.MovieService;
+import com.hanbit.team03.core.vo.MovieVO;
 
 public class SpringApplication {
 
@@ -23,12 +21,12 @@ public class SpringApplication {
 			ApplicationContext applicationContext =
 					new ClassPathXmlApplicationContext("spring/applicationContext-core.xml", "spring/applicationContext-dao.xml");
 
-			ReserveMovieService reserveMovieService = applicationContext.getBean(ReserveMovieService.class);
+			MovieService movieService = applicationContext.getBean(MovieService.class);
 
 
-			 List<ReserveDataListVO> reserveMovieVO = reserveMovieService.getReservations("1");
+			 List<MovieVO> selectMoviesVO = movieService.getMovies("2");
 
-			 for(ReserveDataListVO t : reserveMovieVO ){
+			 for(MovieVO t : selectMoviesVO){
 				 System.out.println(t.getMovieName());
 			 }
 		}
