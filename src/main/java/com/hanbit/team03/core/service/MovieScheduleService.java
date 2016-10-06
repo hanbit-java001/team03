@@ -17,7 +17,7 @@ public class MovieScheduleService {
 	private MovieScheduleDAO movieScheduleDAO;
 
 	public List<TimeTableVO> getTimeTable(int movieId, int cinemaId){
-		movieScheduleDAO.countEmptySeat(movieId, cinemaId);
+		movieScheduleDAO.selectCountReserveSeat(movieId, cinemaId);
 
 		return movieScheduleDAO.selectMovieSchedule(movieId, cinemaId);
 	}

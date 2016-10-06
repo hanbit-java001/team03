@@ -33,7 +33,7 @@
 	</select>
 
 <!-- 수정해야돼 -->
-	<select id="selectCountEmptySeat" parameterType="map" resultType="int">
+	<select id="selectCountReserveSeat" parameterType="map" resultType="int">
 	<![CDATA[
 		SELECT  COUNT(*) EMPTY_SEAT
 		  FROM(

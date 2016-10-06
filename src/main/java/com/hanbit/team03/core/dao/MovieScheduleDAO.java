@@ -29,7 +29,7 @@ public class MovieScheduleDAO {
 		return result;
 	}
 
-	public int countEmptySeat(int movieId, int cinemaId){
+	public int selectCountReserveSeat(int movieId, int cinemaId){
 		Map params = new HashMap();
 		params.put("movieId", movieId);
 		params.put("cinemaId", cinemaId);
