@@ -34,7 +34,7 @@ $(function(){
 			location.href = "/movie/now";
 		}
 		else if (mainMenu== "cinema"){
-			location.href = "/";
+			location.href = "/cinema/cinema";
 		}
 		else if (mainMenu== "sweetShop"){
 			location.href = "/";

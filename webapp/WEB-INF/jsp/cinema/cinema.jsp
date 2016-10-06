@@ -41,13 +41,19 @@
 
 
 	<div class="cinema-content">
-		<div>
-			<ul>
-				<li id="detailName"></li>
-			</ul>
-		</div>
+		
 	</div>
 
+	<script type="text/javascript">
+	var movie = [1,2,3,4,5];
+	
+	for (var i=0; i<movie.length; i++){
+		var movie1 = movie[i];
+		var html = "<div class='cinema-content'>" + movie1 + "</div>";
+		
+		$(".movie").prepend(html)
+	}
+	</script>
 
 
 	<div class="main-bottom">
@@ -58,7 +64,7 @@
 
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
-<script src="/static/js/main.js"></script>
+<script src="/static/js/cinema.js"></script>
 <script type="text/javascript"></script>
 
 </body>

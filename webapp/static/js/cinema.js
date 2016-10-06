@@ -31,10 +31,10 @@ $(function(){
 			location.href = "/"
 		}
 		else if (mainMenu== movie){
-			location.href = "/"
+			location.href = "/movie/now";
 		}
 		else if (mainMenu== cinema){
-			location.href = "/"
+			location.href = "/cinema/cinema";
 		}
 		else if (mainMenu== sweetShop){
 			location.href = "/"
@@ -51,7 +51,7 @@ $(function(){
 		}
 
 		$("#detailName").html(show.name);
-	})
+	});
 
 });
 
