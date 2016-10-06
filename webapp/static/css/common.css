@@ -53,30 +53,6 @@ html, body {
 	padding: 7px;
 }
 
-
-.main-content {
-	position: relative;
-	height:350px;
-	background-image: url("../images/mainimage.jpg");
-	background-position:center;
-	background-repeat: no-repeat;
-	width:100%;
-}
-
-.main-content-main {
-	height:290px;
-}
-
-
-.main-content-background {
-	color: black;
-	font-weight:bold;
-	font-size: 35px;
-	text-align:center;
-	height: 200px;
-	bottom:0;
-}
-
 .main-bottom {
 	position: absolute;
 	bottom:0px;

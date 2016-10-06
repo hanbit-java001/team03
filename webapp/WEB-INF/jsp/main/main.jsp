@@ -10,6 +10,7 @@
 <meta name="msapplication-tap-highlight" content="no" />
 <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/common.css"/>
+<link rel="stylesheet" href="/static/css/main.css"/>
 </head>
 <body>
 
