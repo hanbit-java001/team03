@@ -3,11 +3,11 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="file">
 
-	<insert id="insertFile" parameterType="fileVO">
+	<insert id="insertFile" parameterType="FileVO">
 		INSERT INTO FILES
 			(file_id, file_path, content_type, file_size, file_name)
 		VALUES
-			(#{fileId), #{filePath}, #{contentType}, #{fileSize}, #{fileName})
+			(#{fileId}, #{filePath}, #{contentType}, #{fileSize}, #{fileName})
 	</insert>
 
 </mapper>
