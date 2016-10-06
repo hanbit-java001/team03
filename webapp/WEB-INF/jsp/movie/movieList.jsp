@@ -36,17 +36,27 @@
 				<li>이벤트</li>
 			</ul>
 		</div>
+
+
+
+
 	</div>
 	<div class="main-content">
-		정성을 다하겠습니다.
+		<ul>
+			<li>새</li>
+			<li>아가씨</li>
+		</ul>
+
 	</div>
+
+
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
 	</div>
 
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
-<script src="/static/js/main.js"></script>
+<script src="/static/js/movie.js"></script>
 <script type="text/javascript"></script>
 
 </body>

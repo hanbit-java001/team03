@@ -25,6 +25,7 @@ public class MovieDAO {
 		return result;
 	}
 
+	
 
 	public MovieVO selectMovie(String movieId) {
 		LOGGER.debug("상세보기");

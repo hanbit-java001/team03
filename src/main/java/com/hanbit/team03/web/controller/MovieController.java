@@ -26,7 +26,7 @@ public class MovieController {
 	@RequestMapping("/movie/now")
 	public String list() {
 
-		return "movie/now";
+		return "movie/movieList";
 	}
 
 	@RequestMapping(value="/api/movie/{movieId}", method=RequestMethod.GET)
