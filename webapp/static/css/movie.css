@@ -1,0 +1,20 @@
+.main-content {
+
+
+}
+
+.main-content ul {
+
+}
+
+.main-content ul li {
+	text-align: center;
+	font-size: 30px;
+	list-style: none;
+	color:gray;
+
+}
+
+.movie-name li {
+	color:blue !important;
+}

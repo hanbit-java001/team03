@@ -16,13 +16,13 @@ public class MovieService {
 
 
 	// 영화 제목 한 개씩 가져오기
-	public List<MovieVO> getMovies(String movieId){
-		return movieDAO.selectMovies(movieId);
+	public List<MovieVO> getMovies(){
+		return movieDAO.selectMovies();
 	}
 
 	// 영화 상세보기
-	public MovieVO getMovie(String movieId){
-		return movieDAO.selectMovie(movieId);
+	public MovieVO getMovieDetails(String movieId){
+		return movieDAO.selectMovieDetails(movieId);
 	}
 
 }

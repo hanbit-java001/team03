@@ -28,19 +28,19 @@ $(function(){
 		var mainMenu = $(this).attr("id");
 
 		if (mainMenu== "reservation"){
-			location.href = "/";
+			location.href = "/reservation";
 		}
 		else if (mainMenu== "movie"){
 			location.href = "/movie/now";
 		}
 		else if (mainMenu== "cinema"){
-			location.href = "/";
+			location.href = "/cinema/theater";
 		}
 		else if (mainMenu== "sweetShop"){
-			location.href = "/";
+			location.href = "/sweetShop";
 		}
 		else if (mainMenu== "event"){
-			location.href = "/";
+			location.href = "/event";
 		}
 
 	});

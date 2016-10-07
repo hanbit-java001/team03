@@ -29,13 +29,20 @@ public class MovieController {
 		return "movie/movieList";
 	}
 
-	@RequestMapping(value="/api/movie/{movieId}", method=RequestMethod.GET)
-	@ResponseBody
-	public MovieVO getSchedule(@PathVariable("movieId") String movieId) {
 
-		return movieService.getMovie(movieId);
+	@RequestMapping(value="/api/movie/list", method=RequestMethod.GET)
+	@ResponseBody
+	public List<MovieVO> getMovies() {
+
+		return movieService.getMovies();
 	}
 
+	@RequestMapping(value="/api/movie/{movieId}", method=RequestMethod.GET)
+	@ResponseBody
+	public MovieVO getMovie(@PathVariable("movieId") String movieId) {
+
+		return movieService.getMovieDetails(movieId);
+	}
 
 }
 

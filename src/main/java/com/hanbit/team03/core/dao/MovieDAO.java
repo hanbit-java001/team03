@@ -19,16 +19,17 @@ public class MovieDAO {
 	private SqlSession sqlSession;
 
 
-	public List<MovieVO> selectMovies(String movieId){
+	public List<MovieVO> selectMovies(){
 		LOGGER.debug("셀렉트 영화들");
-		List<MovieVO> result = sqlSession.selectList("movie.selectMovies", movieId);
+		List<MovieVO> result = sqlSession.selectList("movie.selectMovies");
+
 		return result;
 	}
 
-	
 
-	public MovieVO selectMovie(String movieId) {
-		LOGGER.debug("상세보기");
+
+	public MovieVO selectMovieDetails(String movieId) {
+		LOGGER.debug("영화 상세보기");
 		return sqlSession.selectOne("movie.selectMovie", movieId);
 
 	}

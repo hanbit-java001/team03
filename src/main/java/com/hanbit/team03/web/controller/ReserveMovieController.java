@@ -16,7 +16,7 @@ public class ReserveMovieController {
 	@Autowired
 	ReserveMovieService reserveMovieService;
 
-	@RequestMapping("/reservation/reservation")
+	@RequestMapping("/reservation")
 	public String goToPage(Model model) {
 		return "reservation/reservation";
 	}

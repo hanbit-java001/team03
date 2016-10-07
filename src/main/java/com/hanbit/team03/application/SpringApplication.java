@@ -24,7 +24,7 @@ public class SpringApplication {
 			MovieService movieService = applicationContext.getBean(MovieService.class);
 
 
-			 List<MovieVO> selectMoviesVO = movieService.getMovies("2");
+			 List<MovieVO> selectMoviesVO = movieService.getMovies();
 
 			 for(MovieVO t : selectMoviesVO){
 				 System.out.println(t.getMovieName());

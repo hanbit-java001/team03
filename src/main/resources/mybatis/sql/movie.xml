@@ -3,13 +3,12 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="movie">
 
-	<select id="selectMovies" parameterType="String" resultType="MovieVO">
+	<select id="selectMovies" resultType="MovieVO">
 		SELECT MOVIE_NAME
 		  FROM MOVIE
-		 WHERE MOVIE_ID = #{movieId}
 	</select>
 
-	<select id="selectMovie" parameterType="string" resultType="MovieVO">
+	<select id="selectMovieDetails" parameterType="string" resultType="MovieVO">
 		SELECT MOVIE_NAME, MOVIE_DIRECTOR, MOVIE_GENRE
 		FROM MOVIE
 		WHERE MOVIE_ID = #{movieId}
