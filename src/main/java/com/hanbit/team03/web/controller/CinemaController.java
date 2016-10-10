@@ -22,7 +22,7 @@ public class CinemaController {
 	@Autowired
 	private CinemaService cinemaService;
 
-	@RequestMapping("/cinema/theater")
+	@RequestMapping("/cinema/cinema")
 	public String list() {
 
 		return "cinema/cinemaList";
