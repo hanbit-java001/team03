@@ -25,6 +25,7 @@ html, body {
 	display: inline-block;
 	color: #B19CD9;
 	padding: 10px;
+	cursor: pointer;
 }
 
 .top-logo {
@@ -51,11 +52,12 @@ html, body {
 .top-menu ul li{
 	display: inline-block;
 	padding: 7px;
+	cursor: pointer;
 }
 
 
 .main-bottom {
-	position: absolute;
+	position: relative;
 	bottom:0px;
 	width:100%;
 	z-index:10px;

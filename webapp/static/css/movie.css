@@ -12,9 +12,10 @@
 	font-size: 30px;
 	list-style: none;
 	color:gray;
-
 }
 
 .movie-name li {
-	color:blue !important;
+	color:#AEC6CF !important;
+	height:150px;
+	display: inline-block;
 }
