@@ -44,16 +44,6 @@
 		
 	</div>
 
-	<script type="text/javascript">
-	var movie = [1,2,3,4,5];
-	
-	for (var i=0; i<movie.length; i++){
-		var movie1 = movie[i];
-		var html = "<div class='cinema-content'>" + movie1 + "</div>";
-		
-		$(".movie").prepend(html)
-	}
-	</script>
 
 
 	<div class="main-bottom">
