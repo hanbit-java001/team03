@@ -14,5 +14,11 @@
 		WHERE MOVIE_ID = #{movieId}
 	</select>
 
+	<select id="selectMovieFile" parameterType="string" resultType="MovieFilesVO">
+		SELECT m.MOVIE_NAME,f.MOVIE_FILEID
+		FROM MOVIE m,MOVIE_FILES f
+		WHERE m.MOVIE_ID = f.MOVIE_FILEID
+	</select>
+
 
 </mapper>
