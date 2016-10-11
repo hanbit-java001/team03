@@ -20,8 +20,8 @@ public class MovieDAO {
 
 
 	public List<MovieVO> selectMovies(){
-		LOGGER.debug("셀렉트 영화들");
-		List<MovieVO> result = sqlSession.selectList("movie.selectMovies");
+		LOGGER.debug("셀렉트 영화와 이미지");
+		List<MovieVO> result = sqlSession.selectList("movie.selectMovieFile");
 
 		return result;
 	}

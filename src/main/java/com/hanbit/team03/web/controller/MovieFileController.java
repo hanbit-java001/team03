@@ -10,25 +10,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hanbit.team03.core.vo.FileVO;
-import com.hanbit.team03.core.service.FileService;
+import com.hanbit.team03.core.vo.MovieFileVO;
+import com.hanbit.team03.core.service.MovieFileService;
 
 @Controller
-public class FileController {
+public class MovieFileController {
 
 	@Autowired
-	private FileService fileService;
+	private MovieFileService fileService;
 
 	@RequestMapping("/file/{fileId}")
 	@ResponseBody
 	public void getFile(@PathVariable("fileId") String fileId, HttpServletResponse response) throws Exception{
-		FileVO fileVO = fileService.getFile(fileId);
+		MovieFileVO fileVO = fileService.getFile(fileId);
 
-		response.setContentType(fileVO.getContentType());
-		response.setContentLengthLong(fileVO.getFileSize());
+		response.setContentType(fileVO.getMovieContentType());
+//		response.setContentLengthLong(fileVO.getMovieFileSize());
+
 
 		OutputStream outputStream = response.getOutputStream();
-		outputStream.write(fileVO.getFileData());
+//		outputStream.write(fileVO.getFileData());
 		outputStream.close();
 	}
 }

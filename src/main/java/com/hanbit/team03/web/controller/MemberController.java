@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.hanbit.team03.core.service.FileService;
+import com.hanbit.team03.core.service.MovieFileService;
 import com.hanbit.team03.core.service.MemberService;
-import com.hanbit.team03.core.vo.FileVO;
+import com.hanbit.team03.core.vo.MovieFileVO;
 import com.hanbit.team03.core.vo.MemberVO;
 import com.hanbit.team03.web.controller.MemberController;
 

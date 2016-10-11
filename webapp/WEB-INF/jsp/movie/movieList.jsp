@@ -55,5 +55,7 @@
 <script src="/static/js/movie.js"></script>
 <script type="text/javascript"></script>
 
+<img src="">
+
 </body>
 </html>

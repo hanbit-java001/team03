@@ -1,49 +1,48 @@
 package com.hanbit.team03.core.vo;
 
 public class FileVO {
-	private String fileId;
-	private String filePath;
-	private String contentType;
-	private long fileSize;
-	private String fileName;
-	private byte[] fileData;
 
-
-	public String getFileId() {
-		return fileId;
+	private String Fileid;
+	private String FileSize;
+	private String FilePath;
+	private String ContentType;
+	private String FileName;
+	private byte[] FileData;
+	public String getFileid() {
+		return Fileid;
 	}
-	public void setFileId(String fileId) {
-		this.fileId = fileId;
+	public void setFileid(String fileid) {
+		Fileid = fileid;
+	}
+	public String getFileSize() {
+		return FileSize;
+	}
+	public void setFileSize(String fileSize) {
+		FileSize = fileSize;
 	}
 	public String getFilePath() {
-		return filePath;
+		return FilePath;
 	}
 	public void setFilePath(String filePath) {
-		this.filePath = filePath;
+		FilePath = filePath;
 	}
 	public String getContentType() {
-		return contentType;
+		return ContentType;
 	}
 	public void setContentType(String contentType) {
-		this.contentType = contentType;
-	}
-	public long getFileSize() {
-		return fileSize;
-	}
-	public void setFileSize(long fileSize) {
-		this.fileSize = fileSize;
+		ContentType = contentType;
 	}
 	public String getFileName() {
-		return fileName;
+		return FileName;
 	}
 	public void setFileName(String fileName) {
-		this.fileName = fileName;
+		FileName = fileName;
 	}
 	public byte[] getFileData() {
-		return fileData;
+		return FileData;
 	}
 	public void setFileData(byte[] fileData) {
-		this.fileData = fileData;
+		FileData = fileData;
 	}
 
 
