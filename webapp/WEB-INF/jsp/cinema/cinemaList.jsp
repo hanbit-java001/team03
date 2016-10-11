@@ -10,6 +10,7 @@
 <meta name="msapplication-tap-highlight" content="no" />
 <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/common.css"/>
+<link rel="stylesheet" href="/static/css/cinema.css"/>
 </head>
 <body>
 
@@ -39,7 +40,9 @@
 	</div>
 
 	<div class="main-content">
-
+		<ul>
+			<li>영화관</li>
+		</ul>
 	</div>
 
 	<div class="main-bottom">
@@ -49,6 +52,7 @@
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="/static/js/commonMenu.js"></script>
+<script src="/static/js/cinema.js"></script>
 <script type="text/javascript"></script>
 
 </body>

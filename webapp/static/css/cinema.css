@@ -1,1 +1,21 @@
-@CHARSET "EUC-KR";
+.main-content {
+
+
+}
+
+.main-content ul {
+
+}
+
+.main-content ul li {
+	text-align: center;
+	font-size: 30px;
+	list-style: none;
+	color:gray;
+}
+
+.cinema-name li {
+	color:#AEC6CF !important;
+	height:150px;
+	display: inline-block;
+}

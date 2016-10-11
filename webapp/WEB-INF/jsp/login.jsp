@@ -40,15 +40,25 @@
 	</div>
 
 	<div class="main-content">
-		<div class="main-content-main"></div>
-		<div class="main-content-background">
-		정성을 다하겠습니다.
-		</div>
+		<div class="main-content-body login-form">
+				<div class="form-group">
+		   			<label for="txtEmail" class="input-required">이메일</label>
+		   			<input type="text" class="form-control" id="txtEmail" placeholder="이메일">
+				</div>
+				<div class="form-group">
+		   			<label for="txtPassword" class="input-required">비밀번호</label>
+		   			<input type="password" class="form-control" id="txtPassword" placeholder="비밀번호">
+				</div>
+				<div class="bottom-buttons">
+					<button class="btnLogin btn btn-success">로그인</button>
+					<button class="btnLoginCancel btn btn-default">취소</button>
+				</div>
+			</div>
 	</div>
+
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
 	</div>
-
 
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>

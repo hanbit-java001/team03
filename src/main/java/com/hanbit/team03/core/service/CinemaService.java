@@ -15,8 +15,8 @@ public class CinemaService {
 	private CinemaDAO cinemaDAO;
 
 		// 영화관 이름 한 개씩 가져오기
-		public List<CinemaVO> getCinemas(String cinemaId){
-			return cinemaDAO.selectCinemas(cinemaId);
+		public List<CinemaVO> getCinemas(){
+			return cinemaDAO.selectCinemas();
 		}
 
 		// 영화관 상세보기

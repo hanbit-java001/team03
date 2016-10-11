@@ -4,7 +4,7 @@ $(function(){
 		var loginMenu = $(this).attr("id");
 
 		if(loginMenu == "login"){
-			location.href = "/";
+			showLoginDialog();
 		}
 		else if(loginMenu == "register"){
 			location.href = "/";
@@ -44,6 +44,23 @@ $(function(){
 		}
 
 	});
+
+	$(".top-logo").on("click", function(){
+		location.href = "/";
+	});
+
+	$(".btnLoginCancel").on("click", function() {
+		hideLoginDialog();
+	});
+
+	function showLoginDialog() {
+		$(".login-dialog").fadeIn();
+	}
+
+	function hideLoginDialog() {
+		$(".login-dialog").fadeOut();
+	}
+
 
 });
 

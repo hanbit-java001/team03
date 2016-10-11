@@ -6,7 +6,6 @@
 	<select id="selectCinemas" parameterType="String" resultType="CinemaVO">
 		SELECT CINEMA_NAME
 		  FROM CINEMA
-		 WHERE CINEMA_ID = #{cinemaId}
 	</select>
 
 	<select id="selectCinema" parameterType="string" resultType="CinemaVO">
