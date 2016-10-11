@@ -6,9 +6,23 @@ public class MovieVO {
 	private String director;
 	private String genre;
 
+	private String MovieFileid;
+	private String MovieFilePath;
 
 
 
+	public String getMovieFileid() {
+		return MovieFileid;
+	}
+	public void setMovieFileid(String movieFileid) {
+		MovieFileid = movieFileid;
+	}
+	public String getMovieFilePath() {
+		return MovieFilePath;
+	}
+	public void setMovieFilePath(String movieFilePath) {
+		MovieFilePath = movieFilePath;
+	}
 	public String getDirector() {
 		return director;
 	}

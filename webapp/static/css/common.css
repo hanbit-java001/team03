@@ -1,5 +1,6 @@
 html, body {
 	height:100%;
+	width:100%;
 	background-color: #FFFFF0;
 }
 
@@ -53,12 +54,9 @@ html, body {
 	display: inline-block;
 	padding: 7px;
 	cursor: pointer;
+
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 .main-bottom {
 	position: relative;
 	bottom:0px;

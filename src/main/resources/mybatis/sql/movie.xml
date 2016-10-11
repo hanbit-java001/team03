@@ -3,21 +3,16 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="movie">
 
-	<select id="selectMovies" resultType="MovieVO">
-		SELECT MOVIE_NAME
-		  FROM MOVIE
-	</select>
-
 	<select id="selectMovieDetails" parameterType="string" resultType="MovieVO">
 		SELECT MOVIE_NAME, MOVIE_DIRECTOR, MOVIE_GENRE
 		FROM MOVIE
 		WHERE MOVIE_ID = #{movieId}
 	</select>
 
-	<select id="selectMovieFile" parameterType="string" resultType="MovieFilesVO">
-		SELECT m.MOVIE_NAME,f.MOVIE_FILEID
-		FROM MOVIE m,MOVIE_FILES f
-		WHERE m.MOVIE_ID = f.MOVIE_FILEID
+	<select id="selectMovieFile" resultType="MovieVO">
+		SELECT m.MOVIE_NAME,f.MOVIEFILE_PATH
+		FROM MOVIE m,MOVIEFILE f
+		WHERE m.MOVIE_ID = f.MOVIEFILE_ID
 	</select>
 
 

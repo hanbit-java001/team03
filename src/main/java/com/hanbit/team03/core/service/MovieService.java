@@ -15,9 +15,10 @@ public class MovieService {
 	private MovieDAO movieDAO;
 
 
-	// 영화 제목 한 개씩 가져오기
+	// 영화하고 이미지 불러오기
 	public List<MovieVO> getMovies(){
 		return movieDAO.selectMovies();
+
 	}
 
 	// 영화 상세보기
