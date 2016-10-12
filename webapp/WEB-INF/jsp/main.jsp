@@ -42,7 +42,6 @@
 		<div class="main-content-main"></div>
 		<div class="main-content-background">
 		정성을 다하겠습니다.
-		<img src="/static/images/새.jpg">
 		</div>
 	</div>
 	<div class="main-bottom">
