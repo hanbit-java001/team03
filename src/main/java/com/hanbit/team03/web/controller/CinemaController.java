@@ -1,5 +1,7 @@
 package com.hanbit.team03.web.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hanbit.team03.core.service.CinemaService;
 import com.hanbit.team03.core.vo.CinemaVO;
-import com.hanbit.team03.core.vo.MovieVO;
 
 
 @Controller
@@ -22,10 +23,17 @@ public class CinemaController {
 	@Autowired
 	private CinemaService cinemaService;
 
-	@RequestMapping("/cinema/cinema")
+	@RequestMapping("/cinema/theater")
 	public String list() {
 
 		return "cinema/cinemaList";
+	}
+
+	@RequestMapping(value="/api/cinema/list", method=RequestMethod.GET)
+	@ResponseBody
+	public List<CinemaVO> getCinemas() {
+
+		return cinemaService.getCinemas();
 	}
 
 	@RequestMapping(value="/api/cinema/{cinemaId}", method=RequestMethod.GET)

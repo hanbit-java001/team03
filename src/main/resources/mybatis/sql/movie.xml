@@ -9,11 +9,19 @@
 		WHERE MOVIE_ID = #{movieId}
 	</select>
 
+<<<<<<< HEAD
+<!-- 	<select id="selectMovieFile" parameterType="string" resultType="MovieFilesVO"> -->
+<!-- 		SELECT m.MOVIE_NAME,f.MOVIE_FILEID -->
+<!-- 		FROM MOVIE m,MOVIE_FILES f -->
+<!-- 		WHERE m.MOVIE_ID = f.MOVIE_FILEID -->
+<!-- 	</select> -->
+=======
 	<select id="selectMovieFile" resultType="MovieVO">
 		SELECT m.MOVIE_NAME,f.MOVIEFILE_PATH
 		FROM MOVIE m,MOVIEFILE f
 		WHERE m.MOVIE_ID = f.MOVIEFILE_ID
 	</select>
+>>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 
 
 </mapper>

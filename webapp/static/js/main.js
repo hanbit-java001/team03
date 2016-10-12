@@ -4,7 +4,7 @@ $(function(){
 		var loginMenu = $(this).attr("id");
 
 		if(loginMenu == "login"){
-			location.href = "/";
+			showLoginDialog();
 		}
 		else if(loginMenu == "register"){
 			location.href = "/";
@@ -34,7 +34,7 @@ $(function(){
 			location.href = "/movie/now";
 		}
 		else if (mainMenu== "cinema"){
-			location.href = "/cinema/cinema";
+			location.href = "/cinema/theater";
 		}
 		else if (mainMenu== "sweetShop"){
 			location.href = "/";
@@ -44,6 +44,18 @@ $(function(){
 		}
 
 	});
+
+	$(".btnLoginCancel").on("click", function() {
+		hideLoginDialog();
+	});
+
+	function showLoginDialog() {
+		$(".login-dialog").fadeIn();
+	}
+
+	function hideLoginDialog() {
+		$(".login-dialog").fadeOut();
+	}
 
 });
 

@@ -20,9 +20,9 @@ public class CinemaDAO {
 	private SqlSession sqlSession;
 
 
-	public List<CinemaVO> selectCinemas(String cinemaId){
+	public List<CinemaVO> selectCinemas(){
 		LOGGER.debug("셀렉트 영화관들");
-		List<CinemaVO> result = sqlSession.selectList("cinema.selectCinemas", cinemaId);
+		List<CinemaVO> result = sqlSession.selectList("cinema.selectCinemas");
 		return result;
 	}
 

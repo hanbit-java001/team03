@@ -3,13 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>스위트샵</title>
+<title>한빛 영화관</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <meta name="msapplication-tap-highlight" content="no" />
 <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/common.css"/>
+<link rel="stylesheet" href="/static/css/main.css"/>
 </head>
 <body>
 
@@ -39,8 +40,22 @@
 	</div>
 
 	<div class="main-content">
-
+		<div class="main-content-body login-form">
+				<div class="form-group">
+		   			<label for="txtEmail" class="input-required">이메일</label>
+		   			<input type="text" class="form-control" id="txtEmail" placeholder="이메일">
+				</div>
+				<div class="form-group">
+		   			<label for="txtPassword" class="input-required">비밀번호</label>
+		   			<input type="password" class="form-control" id="txtPassword" placeholder="비밀번호">
+				</div>
+				<div class="bottom-buttons">
+					<button class="btnLogin btn btn-success">로그인</button>
+					<button class="btnLoginCancel btn btn-default">취소</button>
+				</div>
+			</div>
 	</div>
+
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
 	</div>
@@ -48,7 +63,6 @@
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="/static/js/commonMenu.js"></script>
-<script src="/static/js/main.js"></script>
 <script type="text/javascript"></script>
 
 </body>

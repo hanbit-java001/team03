@@ -51,7 +51,11 @@
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="/static/js/commonMenu.js"></script>
+<<<<<<< HEAD
 <script src="/static/js/reservation.js"></script>
+=======
+<script src="/static/js/main.js"></script>
+>>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 <script type="text/javascript"></script>
 
 </body>
