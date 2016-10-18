@@ -1,1 +1,30 @@
+.monthly-day, .monthly-date {
+	height: 35px;
+	position: relative;
+	text-align: center;
+	padding: 0px;
+	margin: 0 auto;
+}
 
+.monthly-day ul, .monthly-date ul {
+	display: inline-block;
+	font-size: 18px;
+
+}
+
+.main-content{
+	height: 80%;
+
+}
+.monthly-date ul li{
+	display: inline-block;
+	padding: 17px;
+
+}
+
+.monthly-day ul li{
+	display: inline-block;
+	padding: 10px;
+	cursor: pointer;
+
+}
