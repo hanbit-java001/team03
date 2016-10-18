@@ -5,6 +5,9 @@ public class CinemaVO {
 	private String cinemaName;
 	private String cinemaAddress;
 
+	private String CinemaFileid;
+	private String CinemaFilePath;
+
 
 
 	public String getCinemaAddress() {
@@ -25,6 +28,19 @@ public class CinemaVO {
 	public void setCinemaName(String cinemaName) {
 		this.cinemaName = cinemaName;
 	}
+	public String getCinemaFileid() {
+		return CinemaFileid;
+	}
+	public void setCinemaFileid(String cinemaFileid) {
+		CinemaFileid = cinemaFileid;
+	}
+	public String getCinemaFilePath() {
+		return CinemaFilePath;
+	}
+	public void setCinemaFilePath(String cinemaFilePath) {
+		CinemaFilePath = cinemaFilePath;
+	}
+
 
 
 }

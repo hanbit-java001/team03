@@ -14,5 +14,10 @@
 		WHERE CINEMA_ID = #{cinemaId}
 	</select>
 
+	<select id="selectCinemaFile" resultType="CinemaVO">
+		SELECT c.CINEMA_NAME, p.CINEMAFILE_PATH
+		FROM CINEMA c,CINEMAFILE p
+		WHERE c.CINEMA_ID = p.CINEMAFILE_ID
+	</select>
 
 </mapper>

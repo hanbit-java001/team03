@@ -10,6 +10,7 @@
 <meta name="msapplication-tap-highlight" content="no" />
 <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/common.css"/>
+<link rel="stylesheet" href="/static/css/reservation.css"/>
 </head>
 <body>
 
@@ -39,8 +40,22 @@
 	</div>
 
 	<div class="main-content">
+		<div class="monthly-date">
+			<ul>
+			</ul>
+		</div>
 
+		<div class="monthly-day">
+			<ul>
+			</ul>
+		</div>
+
+		<div class="movie-list">
+			<ul>
+			</ul>
+		</div>
 	</div>
+
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
 	</div>
@@ -48,6 +63,7 @@
 
 <script src="/static/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="/static/js/commonMenu.js"></script>
+<script src="/static/js/reservation.js"></script>
 <script src="/static/js/main.js"></script>
 <script type="text/javascript"></script>
 

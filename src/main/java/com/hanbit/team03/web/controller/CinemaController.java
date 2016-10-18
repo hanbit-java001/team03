@@ -32,15 +32,6 @@ public class CinemaController {
 	@RequestMapping(value="/api/cinema/list", method=RequestMethod.GET)
 	@ResponseBody
 	public List<CinemaVO> getCinemas() {
-
 		return cinemaService.getCinemas();
 	}
-
-	@RequestMapping(value="/api/cinema/{cinemaId}", method=RequestMethod.GET)
-	@ResponseBody
-	public CinemaVO getCinema(@PathVariable("cinemaId") String cinemaId) {
-
-		return cinemaService.getCinema(cinemaId);
-	}
-
 }

@@ -1,5 +1,10 @@
 package com.hanbit.team03.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hanbit.team03.core.service.ReserveMovieService;
 import com.hanbit.team03.core.vo.ReserveMovieVO;
+import com.hanbit.team03.core.vo.SelectCountReservedSeatVO;
 
 @Controller
 public class ReserveMovieController {
@@ -21,9 +27,10 @@ public class ReserveMovieController {
 		return "reservation/reservation";
 	}
 
+	//이거 미완성인거같은데
 	@RequestMapping("/api/reservation/reservation")
 	@ResponseBody
-	public String reservation(@RequestParam("movieId") int movieId,
+	public ReserveMovieVO reservation(@RequestParam("movieId") int movieId,
 							  @RequestParam("cinemaId") int cinemaId,
 							  @RequestParam("theaterId") int theaterId,
 							  @RequestParam("seatId") int seatId,
@@ -35,6 +42,13 @@ public class ReserveMovieController {
 		reserveMovieVO.setSeatId(seatId);
 		reserveMovieVO.setTimeId(timeId);
 
-		return "/api/reservation/reservation";
+		return reserveMovieVO;
+	}
+
+	@RequestMapping("/api/reservation/getMovieSchedule")
+	@ResponseBody
+	public List<SelectCountReservedSeatVO> getMovieSchedule(@RequestParam("movieId") int movieId, @RequestParam("cinemaId") int cinemaId){
+		List<SelectCountReservedSeatVO> result = reserveMovieService.selectCountReservedSeat(movieId, cinemaId);
+		return result;
 	}
 }

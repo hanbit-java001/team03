@@ -38,10 +38,9 @@
 			</ul>
 		</div>
 	</div>
-
+	<div class="pageMainTitle">영화관</div>
 	<div class="main-content">
 		<ul>
-			<li>영화관</li>
 		</ul>
 	</div>
 

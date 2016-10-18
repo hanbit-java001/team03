@@ -1,4 +1,5 @@
 $(function(){
+
 	function getcinemas(){
 		$.ajax({
 			url:"/api/cinema/list",
@@ -7,12 +8,15 @@ $(function(){
 
     		  for (var i=0;i<result.length;i++) {
 	  				var cinemaName = result[i].cinemaName;
-	  				var cinemaFile = result[i].Cinema_FilePath;
-	  				var cinemaHTML = "<div class='cinema-name'><li>" + cinemaName + "</li></div>";
+	  				var cinemaFile = result[i].cinemaFilePath;
+	  				var cinemaHTML = "<li>"+"<img height='220' width='400' src="+cinemaFile+"></li><li>"+ cinemaName +"</li>";
 	  				$(".main-content ul").append(cinemaHTML);
 
 
+	  				console.log(result);
 	  			}
+
+
 		});
 	}
 
@@ -20,6 +24,13 @@ $(function(){
 
 
 
+	$(".cinemaFile").on("click", function() {
+
+
+	});
+
 
 });
+
+
 

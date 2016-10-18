@@ -1,21 +1,42 @@
 .main-content {
-
+	height: 1000px;
 
 }
 
 .main-content ul {
-
+	padding: 0px;
 }
 
 .main-content ul li {
 	text-align: center;
 	font-size: 30px;
 	list-style: none;
+	min-height: 100px;
 	color:gray;
+}
+
+.pageMainTitle{
+	text-align: center;
+	font-size: 30px;
+	list-style: none;
+	color:gray;
+	height: 100px;
+}
+
+.cinema-name {
+	width: 100%;
 }
 
 .cinema-name li {
 	color:#AEC6CF !important;
 	height:150px;
 	display: inline-block;
+	text-align: center;
+}
+
+
+.cinema-body {
+	display: block;
+	height: 50%;
+	width: 100%;
 }

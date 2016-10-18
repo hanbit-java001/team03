@@ -20,6 +20,7 @@
 		<typeAlias type="com.hanbit.team03.core.vo.MovieFileVO" alias="MovieFileVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.FileVO" alias="FileVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.MovieFileVO" alias="MovieFileVO" />
+		<typeAlias type="com.hanbit.team03.core.vo.CinemaFileVO" alias="CinemaFileVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.MemberVO" alias="MemberVO" />
 		<typeAlias type="com.hanbit.team03.core.vo.SelectCountReservedSeatVO" alias="SelectCountReservedSeatVO" />
 	</typeAliases>

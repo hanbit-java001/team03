@@ -36,7 +36,7 @@ html, body {
 }
 
 .top-menu {
-	height: 200px;
+	height: 100px;
 	position: relative;
 	text-align: center;
 	padding: 0px;
@@ -56,19 +56,11 @@ html, body {
 	cursor: pointer;
 
 }
-<<<<<<< HEAD
 
 .top-logo {
 	cursor: pointer;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
-=======
-
->>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 .main-bottom {
 	position: relative;
 	bottom:0px;
