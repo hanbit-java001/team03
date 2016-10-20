@@ -8,6 +8,10 @@
 		FROM MOVIE
 		WHERE MOVIE_ID = #{movieId}
 	</select>
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 
 	<select id="selectMovieFile" resultType="MovieVO">
 		SELECT m.MOVIE_NAME,f.MOVIEFILE_PATH
