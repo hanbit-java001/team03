@@ -29,7 +29,6 @@ $(function(){
 
 	}
 
-
 	function getCinemas(){
 		$.ajax({
 			url:"/api/cinema/list",
@@ -37,12 +36,44 @@ $(function(){
 		}).done(function(result){
     		  for (var i=0;i<result.length;i++) {
 	  				var cinemaName = result[i].cinemaName;
-	  				var cinemaHTML = "<div class='cinema-name'><li>" + cinemaName + "</li></div>";
+	  				var cinemaId = result[i].cinemaId;
+	  				var cinemaHTML = "<li><button class='cinema' val="+cinemaId+">" + cinemaName + "</button></li>" ;
 	  				$(".movie-list ul").append(cinemaHTML);
 	  			}
+
+    			$(".cinema").on("click", function() {
+    				var cinemaId = $(this).attr("val");
+    				alert(cinemaId);
+    			});
+
 		});
 	}
 
-	getDate();
 	getCinemas();
+	getDate();
+
+
+
+
+
+//	$(".movie-list ul").on("click", function () {
+//
+//		alert("Asdf");
+
+//		$.ajax({
+//			url: "",
+//			method: "POST",
+//			data: {
+//				email: email,
+//				password: password
+//			}
+//		}).done(function(result) {
+//			processAfterLogin(result.name);
+//		}).fail(function() {
+//			alert("로그인을 실패하였습니다.");
+//		});
+//	});
+
+
+
 });

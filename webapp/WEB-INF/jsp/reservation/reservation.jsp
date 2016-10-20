@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>예약</title>
@@ -38,7 +38,6 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="main-content">
 		<div class="monthly-date">
 			<ul>
@@ -55,7 +54,6 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="main-bottom">
 		 2호선 신촌역 6번출구 전방 100미터 거구장건물(1층 스타벅스) 3층
 	</div>
