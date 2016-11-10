@@ -1,0 +1,67 @@
+.sweetshop-content{
+   text-align: center;
+   	background-color: #FCFCF0;
+   	padding-top: 20px;
+   	padding-bottom: 40px;
+}
+
+.snack-menu {
+   text-align: center;
+}
+
+.snack-menuList{
+      margin:10px;
+      padding:20px;
+      display: inline-block;
+      text-align: center;
+      border: 1px solid;
+}
+
+.snack-menuList img {
+      cursor: pointer;
+}
+
+.product {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 2px;
+
+}
+
+
+
+.snack-Detail {
+   position:relative;
+}
+
+.snack-Detail-left {
+   display: inline-block;
+   padding-right:100px;
+}
+
+.snack-Detail-right {
+   text-align: center;
+   display: inline-block;
+}
+
+
+.btnPayment {
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 17px;
+   letter-spacing: 2px;
+}
+
+.back {
+	font-size: 15px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.btnShoppingBasket {
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 17px;
+   letter-spacing: 2px;
+}

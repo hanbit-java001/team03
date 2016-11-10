@@ -1,0 +1,22 @@
+.content {
+	display: inline-block;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 100px;
+	background-color: #FCFCF0;
+}
+
+.test {
+	position: relative;
+	height:232px;
+	width:50%;
+	margin: auto;
+}
+
+
+#googleMap{
+	width: 50%;
+	position: relative;
+	height:200px;
+	margin: auto;
+}

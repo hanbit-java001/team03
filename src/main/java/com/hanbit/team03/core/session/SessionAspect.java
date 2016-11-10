@@ -17,24 +17,24 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class SessionAspect {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(SessionAspect.class);
+   private static final Logger LOGGER = LoggerFactory.getLogger(SessionAspect.class);
 
-	@Around("@annotation(com.hanbit.team03.core.session.LoginRequired)")
-	public Object checkLogin(ProceedingJoinPoint pjp) throws Throwable {
-		Session session = SessionHelper.getSession();
+   @Around("@annotation(com.hanbit.team03.core.session.LoginRequired)")
+   public Object checkLogin(ProceedingJoinPoint pjp) throws Throwable {
+      Session session = SessionHelper.getSession();
 
-		if (session.isLoggedIn()) {
-			return pjp.proceed();
-		}
+      if (session.isLoggedIn()) {
+         return pjp.proceed();
+      }
 
-		MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
-		Class returnType = methodSignature.getReturnType();
+      MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
+      Class returnType = methodSignature.getReturnType();
 
-		if (returnType == String.class) {
-			return "login";
-		}
+      if (returnType == String.class) {
+         return "login";
+      }
 
-		throw new RuntimeException("로그인이 필요합니다.");
-	}
+      throw new RuntimeException("로그인이 필요합니다.");
+   }
 
 }

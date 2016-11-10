@@ -20,7 +20,6 @@ import com.hanbit.team03.core.vo.MemberVO;
 @Controller
 public class SecurityController {
 
-
 	@Autowired
 	private SecurityService securityService;
 
@@ -68,4 +67,5 @@ public class SecurityController {
 
 		response.sendRedirect("/");
 	}
+
 }

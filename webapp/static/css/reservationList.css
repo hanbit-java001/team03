@@ -1,0 +1,42 @@
+.main-content {
+	text-align: center;
+	background-color: #FCFCF0;
+}
+
+.name{
+	display:inline-block;
+	cursor: pointer;
+	height: 30px;
+	letter-spacing: 2px;
+	font-family: arial;
+}
+
+.cinema-content div{
+	text-align: center;
+	font-size: 30px;
+	list-style: none;
+	min-height: 100px;
+	color:gray;
+}
+
+.cinema-content div img{
+	cursor: pointer;
+}
+
+.cinema-contents {
+	text-align: center;
+	height: 600px;
+}
+
+
+.pageMainTitle{
+	text-align: center;
+	font-size: 30px;
+	list-style: none;
+}
+
+.back {
+	font-size: 15px;
+	text-decoration: underline;
+	cursor: pointer;
+}

@@ -18,11 +18,15 @@ public class MovieService {
 	// 영화하고 이미지 불러오기
 	public List<MovieVO> getMovies(){
 		return movieDAO.selectMovies();
+	}
+
+	public List<MovieVO> getMovieNameId(){
+		return movieDAO.selectMovies();
 
 	}
 
 	// 영화 상세보기
-	public MovieVO getMovieDetails(String movieId){
+	public MovieVO getMovieDetails(int movieId){
 		return movieDAO.selectMovieDetails(movieId);
 	}
 

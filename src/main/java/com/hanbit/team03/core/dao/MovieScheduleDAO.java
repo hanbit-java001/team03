@@ -34,8 +34,8 @@ public class MovieScheduleDAO {
 		Map params = new HashMap();
 		params.put("movieId", movieId);
 		params.put("cinemaId", cinemaId);
-
-		return sqlSession.selectOne("selectCountReservedSeat", params);
+		List<SelectCountReservedSeatVO> result = sqlSession.selectList("selectCountReservedSeat", params);
+		return result;
 
 	}
 

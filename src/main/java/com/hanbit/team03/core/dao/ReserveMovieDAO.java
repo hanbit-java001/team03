@@ -22,9 +22,9 @@ public class ReserveMovieDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int insertReservation(ReserveMovieVO reserveMovie){
+	public int insertReservation(List<ReserveMovieVO> list){
 		LOGGER.debug("인서트 예매");
-		int result = sqlSession.insert("reserveMovie.insertReservation", reserveMovie);
+		int result = sqlSession.insert("reserveMovie.insertReservation", list);
 		return result;
 	}
 
@@ -37,7 +37,7 @@ public class ReserveMovieDAO {
 		return sqlSession.selectOne("reserveMovie.selectReservation", reserveId);
 	}
 
-	public List<ReserveDataListVO> selectReservations(String userId){
+	public List<ReserveDataListVO> selectReservations(int userId){
 		LOGGER.debug("셀렉트 예매들");
 		List<ReserveDataListVO> result = sqlSession.selectList("reserveMovie.selectReservations", userId);
 		return result;

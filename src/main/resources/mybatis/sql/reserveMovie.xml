@@ -8,11 +8,29 @@
 		WHERE RESERVE_ID = #{reserveId}
 	</delete>
 
-	<insert id="insertReservation" parameterType="ReserveMovieVO">
-		INSERT INTO RESERVATION
-			(RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID)
-		VALUES
-			(#{reserveId}, #{theaterId}, #{timeId}, #{seatId}, #{userId})
+<!-- 	<insert id="insertReservation" parameterType="java.util.List"> -->
+
+<!-- 		INSERT ALL -->
+<!-- 		<foreach collection="list" item="item" index="index" > -->
+<!-- 			INTO RESERVATION -->
+<!-- 			(RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID) values (SEQ_RESERVATION_NUM.NEXTVAL, #{item.theaterId}, #{item.timeId} , #{item.seatId}, 0) -->
+<!-- 			SELECT SEQ_RESERVATION_NUM.currval FROM dual -->
+<!-- 		</foreach> -->
+<!-- 		SELECT * FROM dual -->
+<!-- 	</insert> -->
+
+
+		<insert id="insertReservation" parameterType="java.util.List">
+			INSERT INTO RESERVATION (RESERVE_ID, THEATER_ID, TIME_ID, SEAT_ID, USER_ID, CINEMA_ID)
+			SELECT SEQ_RESERVATION_NUM.NEXTVAL, A.THEATER_ID, A.TIME_ID, A.SEAT_ID, A.USER_ID, A.CINEMA_ID
+			FROM (
+			<foreach collection="list" item="item" index="ix" separator="UNION ALL">
+				SELECT
+					#{item.theaterId} AS THEATER_ID, #{item.timeId} AS TIME_ID, #{item.seatId} AS SEAT_ID, #{item.userId} AS USER_ID,
+					#{item.cinemaId} AS CINEMA_ID
+				FROM DUAL
+			</foreach>
+			) A
 	</insert>
 
 	<select id="selectReservation" parameterType="int" resultType="ReserveDetailDataVO">
@@ -68,10 +86,10 @@
 					WHERE tttm.CINEMA_ID = c.CINEMA_ID) tcttm, RESERVATION r
 			WHERE r.TIME_ID = tcttm.TIME_ID) tcttmr , SEAT s
 		WHERE tcttmr.SEAT_ID = s.SEAT_ID) tcttmrs
-	WHERE tcttmrs.USER_ID = #{reserveId}
+	WHERE tcttmrs.RESERVE_ID = #{reserveId}
 	</select>
 
-	<select id="selectReservations" parameterType="String" resultType="ReserveDataListVO">
+	<select id="selectReservations" parameterType="int" resultType="ReserveDataListVO">
 		SELECT RT.RESERVE_ID, RT.START_TIME, M.MOVIE_NAME, RT.USER_ID
 		  FROM
 	      	  (SELECT R.RESERVE_ID RESERVE_ID, T.START_TIME START_TIME, T.MOVIE_ID, R.USER_ID

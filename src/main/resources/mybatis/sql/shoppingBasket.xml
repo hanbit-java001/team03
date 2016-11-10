@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shoppingBasket">
+
+   <select id="selectShoppingBasket" parameterType="int" resultType="ShoppingBasketVO">
+      SELECT o.ORDERBASKET_ID, m.MEMBER_ID, o.SWEETSHOP_PRODUCT, o.ORDERBASKET_QUANTITY, (o.SWEETSHOP_PRICE*o.ORDERBASKET_QUANTITY) as ORDERBASKET_TOTAL
+        FROM (SELECT sb.ORDERBASKET_ID, sb.MEMBER_ID, ss.SWEETSHOP_ID, sb.ORDERBASKET_QUANTITY, sb.ORDERBASKET_TOTAL,ss.SWEETSHOP_PRICE,ss.SWEETSHOP_PRODUCT
+          FROM SHOPPINGBASKET sb, SWEETSHOP ss
+       WHERE ss.SWEETSHOP_ID= sb.SWEETSHOP_ID) o, MEMBER m
+       WHERE o.MEMBER_ID = m.MEMBER_ID AND m.MEMBER_ID= #{memberId} ORDER BY o.ORDERBASKET_ID ASC
+   </select>
+
+   <update id="updateShoppingBasket" parameterType="map">
+      UPDATE SHOPPINGBASKET
+         SET ORDERBASKET_QUANTITY = #{orderBasketQuantity}
+       WHERE MEMBER_ID = #{memberId}
+         AND ORDERBASKET_ID= #{orderBasketId}
+   </update>
+
+   <delete id="deleteShoppingBasket" parameterType="map">
+      DELETE FROM SHOPPINGBASKET WHERE ORDERBASKET_ID = #{orderBasketId}
+   </delete>
+
+   <delete id="deleteAllShoppingBasket" parameterType="map">
+      DELETE FROM SHOPPINGBASKET WHERE MEMBER_ID = #{memberId}
+   </delete>
+
+</mapper>

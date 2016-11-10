@@ -1,0 +1,45 @@
+.main-content {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	background-color: #FCFCF0;
+	padding-bottom: 100px;
+	padding-top: 20px;
+}
+
+.eventMain {
+	margin: auto;
+	text-align: center;
+	width:50%;
+}
+.thumbnail {
+	padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    background-color: #FCFCF0;
+    margin: auto;
+    cursor: pointer;
+}
+
+.thumbnail img{
+	width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+
+.eventDetail{
+   text-align: center;
+}
+
+.eventDetails img{
+	width: 100%;
+	height: 100%;
+}
+
+.back {
+	font-size: 15px;
+	text-decoration: underline;
+	cursor: pointer;
+}

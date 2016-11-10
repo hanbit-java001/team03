@@ -8,8 +8,6 @@ public class CinemaVO {
 	private String CinemaFileid;
 	private String CinemaFilePath;
 
-
-
 	public String getCinemaAddress() {
 		return cinemaAddress;
 	}

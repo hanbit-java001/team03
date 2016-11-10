@@ -1,0 +1,24 @@
+.shoppingBasket-content{
+   display: inline-block;
+}
+
+
+.shoppingBasket-list {
+   width:1600px;
+   display: inline-block;
+   font-size: 20px;
+   color: gray;
+}
+
+.btnOption {
+	width:1550px;
+	text-align: right;
+}
+
+.btnPayment {
+   display:inline-block;
+   font-size: 20px;
+   color: gray;
+   cursor:pointer;
+
+}

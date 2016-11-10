@@ -20,17 +20,24 @@ public class MovieDAO {
 
 
 	public List<MovieVO> selectMovies(){
-		LOGGER.debug("셀렉트 영화와 이미지");
+		LOGGER.debug("셀렉트 영화와 이미지와 파일");
 		List<MovieVO> result = sqlSession.selectList("movie.selectMovieFile");
+
+		return result;
+	}
+
+	public List<MovieVO> selectMoviesNameId(){
+		LOGGER.debug("셀렉트 영화와 이미지");
+		List<MovieVO> result = sqlSession.selectList("movie.selectMoviesNameId");
 
 		return result;
 	}
 
 
 
-	public MovieVO selectMovieDetails(String movieId) {
-		LOGGER.debug("영화 상세보기");
-		return sqlSession.selectOne("movie.selectMovie", movieId);
+	public MovieVO selectMovieDetails(int movieId) {
+		LOGGER.debug("특정 영화 상세보기");
+		return sqlSession.selectOne("movie.selectMovieDetails", movieId);
 
 	}
 }

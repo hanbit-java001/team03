@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seat">
+
+	<select id="selectTotalSeatInfo" parameterType="map" resultType="SeatVO">
+		<![CDATA[
+			SELECT s.SEAT_ID, s.THEATER_ID, s.SEAT_NUMBER
+			 FROM(
+					SELECT THEATER_ID
+					FROM TIMETABLE
+					WHERE TIME_ID = #{timeId} AND THEATER_ID = #{theaterId}
+				)t, SEAT s
+			WHERE t.THEATER_ID = S.THEATER_ID
+			ORDER BY s.SEAT_NUMBER
+	 	]]>
+	</select>
+
+	<select id="selectReservedSeatInfo" parameterType="map" resultType="SeatVO">
+		<![CDATA[
+			SELECT r.THEATER_ID, r.SEAT_ID, s.SEAT_NUMBER
+			FROM RESERVATION r, SEAT s
+			WHERE r.TIME_ID = #{timeId} AND r.THEATER_ID = #{theaterId} AND S.SEAT_ID = r.SEAT_ID
+			ORDER BY s.SEAT_NUMBER
+	 	]]>
+	</select>
+
+</mapper>

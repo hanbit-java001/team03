@@ -19,8 +19,12 @@ public class CinemaService {
 			return cinemaDAO.selectCinemas();
 		}
 
+		public List<CinemaVO> getCinemaNameId(){
+			return cinemaDAO.selectCinemaNameId();
+		}
+
 		// 영화관 상세보기
-		public CinemaVO getCinema(String cinemaId) {
+		public CinemaVO getCinemaDetail(int cinemaId) {
 			return cinemaDAO.selectCinema(cinemaId);
 		}
 }

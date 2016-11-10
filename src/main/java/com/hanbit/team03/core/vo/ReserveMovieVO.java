@@ -5,9 +5,16 @@ public class ReserveMovieVO {
 	private int theaterId;
 	private String timeId;
 	private int seatId;
-	private String userId;
+	private int userId;
+	private int cinemaId;
 
 
+	public int getCinemaId() {
+		return cinemaId;
+	}
+	public void setCinemaId(int cinemaId) {
+		this.cinemaId = cinemaId;
+	}
 	public int getReserveId() {
 		return reserveId;
 	}
@@ -32,10 +39,10 @@ public class ReserveMovieVO {
 	public void setSeatId(int seatId) {
 		this.seatId = seatId;
 	}
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

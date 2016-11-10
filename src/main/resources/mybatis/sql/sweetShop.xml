@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sweetShop">
+
+   <select id="selectSweetShop" resultType="SweetShopVO">
+      SELECT SWEETSHOP_ID,SWEETSHOP_PRODUCT,SWEETSHOP_PRICE,SWEETSHOP_PATH
+       FROM SWEETSHOP
+   </select>
+
+   <select id="selectSweetShopDetails" parameterType="int" resultType="SweetShopVO">
+      SELECT SWEETSHOP_ID,SWEETSHOP_PRODUCT,SWEETSHOP_PRICE,SWEETSHOP_PATH,
+            SWEETSHOP_COMPONENT,SWEETSHOP_USINGLIMIT
+       FROM SWEETSHOP WHERE SWEETSHOP_ID=#{sweetShopId}
+   </select>
+
+   <insert id="insertShoppingBasket" parameterType="map">
+      INSERT INTO SHOPPINGBASKET
+         (SWEETSHOP_ID, MEMBER_ID)
+      VALUES (#{sweetShopId}, #{memberId})
+   </insert>
+
+</mapper>

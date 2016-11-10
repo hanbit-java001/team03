@@ -32,6 +32,22 @@ public class CinemaController {
 	@RequestMapping(value="/api/cinema/list", method=RequestMethod.GET)
 	@ResponseBody
 	public List<CinemaVO> getCinemas() {
+
 		return cinemaService.getCinemas();
 	}
+
+	@RequestMapping("/api/cinema/list2")
+	@ResponseBody
+	public List<CinemaVO> getCinemaNameId() {
+		return cinemaService.getCinemaNameId();
+	}
+
+
+	@RequestMapping(value="/api/cinema/detail", method=RequestMethod.GET)
+	@ResponseBody
+	public CinemaVO getCinema(int cinemaId) {
+		CinemaVO result = cinemaService.getCinemaDetail(cinemaId);
+		return result;
+	}
+
 }

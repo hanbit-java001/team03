@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.hanbit.team03.core.dao.MovieScheduleDAO;
 import com.hanbit.team03.core.dao.ReserveMovieDAO;
-import com.hanbit.team03.core.vo.ReserveMovieVO;
-import com.hanbit.team03.core.vo.SelectCountReservedSeatVO;
+import com.hanbit.team03.core.dao.SeatDAO;
 import com.hanbit.team03.core.vo.ReserveDataListVO;
 import com.hanbit.team03.core.vo.ReserveDetailDataVO;
+import com.hanbit.team03.core.vo.ReserveMovieVO;
+import com.hanbit.team03.core.vo.SeatVO;
+import com.hanbit.team03.core.vo.SelectCountReservedSeatVO;
 
 @Service
 public class ReserveMovieService {
@@ -21,13 +23,16 @@ public class ReserveMovieService {
 	@Autowired
 	private MovieScheduleDAO movieScheduleDAO;
 
+	@Autowired
+	private SeatDAO seatDAO;
+
 	//예매하기
-	public int reserveMovie(ReserveMovieVO reserveMovie){
-		int resultReservation = reserveMovieDAO.insertReservation(reserveMovie);
+	public int reserveMovie(List<ReserveMovieVO> list){
+		int resultReservation = reserveMovieDAO.insertReservation(list);
 		if(resultReservation <= 0){
 			throw new RuntimeException("예매가 정상적으로 이루어지지 않았습니다.");
 		}
-		return reserveMovie.getReserveId();
+		return resultReservation;
 	}
 
 //	//예매하기 위해서 사용자가 선택한 ID들 가지고 ReserveMovieVO완성하기위해 select
@@ -47,7 +52,7 @@ public class ReserveMovieService {
 	}
 
 	//예약한 전체 리스트 보여주기
-	public List<ReserveDataListVO> getReservations(String userId){
+	public List<ReserveDataListVO> getReservations(int userId){
 		return reserveMovieDAO.selectReservations(userId);
 	}
 
@@ -61,4 +66,14 @@ public class ReserveMovieService {
 	public List<SelectCountReservedSeatVO> selectCountReservedSeat(int movieId, int cinemaId){
 		return movieScheduleDAO.selectCountReservedSeat(movieId, cinemaId);
 	}
+
+	public List<SeatVO> selectTotalSeat(String timeId, int theaterId){
+		return seatDAO.selectTotalSeatInfo(timeId, theaterId);
+	}
+
+	public List<SeatVO> selectReservedSeat(String timeId, int theaterId){
+		return seatDAO.selectReservedSeatInfo(timeId, theaterId);
+	}
+
+
 }

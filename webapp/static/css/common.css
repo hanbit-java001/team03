@@ -1,74 +1,159 @@
-html, body {
-	height:100%;
-	width:100%;
-	background-color: #FFFFF0;
+/* body { */
+/*    body: min-width:1100px; */
+/* } */
+
+.common-top-container {
+   height:160px;
 }
 
-.main-top-container {
-	height : 160px;
-
-}
-
-.top-login {
-	height: 10px;
-	right: 0px;
-	list-style: none;
-	display: inline-block;
-}
-
-.top-login ul {
-	list-style: none;
-	position: absolute;
-	right:0px;
-}
-
-.top-login ul li {
-	display: inline-block;
-	color: #B19CD9;
-	padding: 10px;
-	cursor: pointer;
-}
-
-.top-logo {
-	text-align: center;
-	padding : 30px;
-	font-size: 30px;
-}
-
-.top-menu {
-	height: 100px;
-	position: relative;
-	text-align: center;
-	padding: 0px;
-	margin: 0 auto;
-
-}
-
-.top-menu ul {
-	display: inline-block;
-	font-size: 18px;
-
-}
-
-.top-menu ul li{
-	display: inline-block;
-	padding: 7px;
-	cursor: pointer;
-
-}
-
-.top-logo {
-	cursor: pointer;
-}
-
-.main-bottom {
-	position: relative;
-	bottom:0px;
-	width:100%;
-	z-index:10px;
+.common-login-container {
+	width: 100%;
 	height: 30px;
-	text-align: center;
+	background-color: #EEEBDA;
+}
+
+.common-login{
+   position: relative;
+   height: 30px;
+   right: 0px;
+   width: 100%;
+   list-style: none;
+   display: none;
+   text-align: right;
+   font-size: 13px;
+   letter-spacing: 2px;
+   opacity:0.9;
+}
+
+
+.common-login ul{
+   margin: 2px;
+   padding-right: 10px;
+}
+
+.common-login ul li{
+   display: inline-block;
+   padding: 3px;
+   cursor: pointer;
+   color: #9A7745;
+
+}
+
+.common-login ul li:HOVER{
+   text-decoration: underline !important;
+}
+
+.common-logined{
+   display: hidden;
+   position: relative;
+   height: 30px;
+   right: 0px;
+   width: 100%;
+   list-style: none;
+   display: none;
+   text-align: right;
+   font-size: 13px;
+   letter-spacing: 2px;
+   opacity:0.9;
+}
+
+
+.common-logined ul{
+   margin: 2px;
+   padding-right: 10px;
+}
+
+.common-logined ul li{
+   display: inline-block;
+   padding: 3px;
+   cursor: pointer;
+   color: #9A7745;
+}
+
+.common-logined ul li:HOVER{
+   text-decoration: underline !important;
 }
 
 
 
+
+
+.common-top-logo {
+   text-align: center;
+   padding: 10px;
+   font-size: 30px;
+   transform: translateY(20%);
+}
+
+.logo{
+   cursor: pointer;
+   width: 242px;
+    height: 52px;
+}
+
+.common-main-menu {
+   height: 40px;
+   text-align: center;
+    letter-spacing: 2px;
+      transform: translateY(45%);
+      border-left:none;
+   border-right:none;
+    border-top:solid;
+    border-bottom:solid;
+    border-top-color:#EEEBDA;
+    border-bottom-color:#EEEBDA;
+    border-top-width: 3px;
+    border-bottom-width: 2.5px;
+
+}
+
+.common-main-menu ul{
+   display: inline-block;
+   font-size: 18px;
+   margin: 0px;
+   font-weight: lighter;
+}
+
+.common-main-menu ul li{
+   display: inline-block;
+   padding: 7px;
+   color: gray;
+   cursor: pointer;
+   color: black;
+    font-size: 15px;
+    height: 100%;
+}
+
+/* .common-main-menu li:HOVER { */
+/*    text-decoration: underline !important; */
+/* } */
+
+
+
+
+
+.common-bottom{
+   position: relative;
+   width: 100%;
+   text-align: center;
+   padding: 60px;
+   bottom: 0px;
+    background-color: #EEEBDA;
+   top :100%;
+}
+
+.common-bottom .glyphicon{
+   transform : translateY(-130%);
+   font-size: 20px;
+   color: #9A7745;
+
+}
+
+.bg-4 {
+    color: #9A7745;
+}
+
+/* body { */
+/*   width: 1579px; */
+/*   max-width: none !important; */
+/* } */

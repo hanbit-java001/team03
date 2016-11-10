@@ -3,21 +3,21 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="movie">
 
-	<select id="selectMovieDetails" parameterType="string" resultType="MovieVO">
-		SELECT MOVIE_NAME, MOVIE_DIRECTOR, MOVIE_GENRE
+	<select id="selectMovieDetails" parameterType="int" resultType="MovieVO">
+		SELECT MOVIE_ID, MOVIE_DIRECTOR, MOVIE_NAME, MOVIE_GENRE, MOVIEFILE_PATH
 		FROM MOVIE
-		WHERE MOVIE_ID = #{movieId}
+		WHERE MOVIE_ID=#{movieId}
 	</select>
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/hanbit-java001/team03.git
 
 	<select id="selectMovieFile" resultType="MovieVO">
-		SELECT m.MOVIE_NAME,f.MOVIEFILE_PATH
-		FROM MOVIE m,MOVIEFILE f
-		WHERE m.MOVIE_ID = f.MOVIEFILE_ID
+		SELECT MOVIE_NAME, MOVIEFILE_PATH, MOVIE_ID
+		FROM MOVIE
 	</select>
 
+	<select id="selectMoviesNameId" parameterType="string" resultType="MovieVO">
+		SELECT MOVIE_NAME, MOVIE_ID
+		FROM MOVIE
+	</select>
 
 </mapper>

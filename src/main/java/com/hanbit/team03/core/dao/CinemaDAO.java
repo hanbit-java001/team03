@@ -14,7 +14,7 @@ import com.hanbit.team03.core.vo.MovieVO;
 @Repository
 public class CinemaDAO {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CinemaDAO.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ReserveMovieDAO.class);
 
 	@Autowired
 	private SqlSession sqlSession;
@@ -22,13 +22,19 @@ public class CinemaDAO {
 
 	public List<CinemaVO> selectCinemas(){
 		LOGGER.debug("셀렉트 영화관들");
-		List<CinemaVO> result = sqlSession.selectList("cinema.selectCinemaFile");
+		List<CinemaVO> result = sqlSession.selectList("cinema.selectCinemas");
 		return result;
 	}
 
-	public CinemaVO selectCinema(String cinemaId) {
+	public List<CinemaVO> selectCinemaNameId(){
+		LOGGER.debug("셀렉트 영화관들");
+		List<CinemaVO> result = sqlSession.selectList("cinema.selectCinemaNameId");
+		return result;
+	}
+
+	public CinemaVO selectCinema(int cinemaId) {
 		LOGGER.debug("상세보기");
-		return sqlSession.selectOne("cinema.selectCinema", cinemaId);
+		return sqlSession.selectOne("cinema.selectDetaileCinema", cinemaId);
 
 	}
 }

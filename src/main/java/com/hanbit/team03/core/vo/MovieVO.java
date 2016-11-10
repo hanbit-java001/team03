@@ -1,40 +1,15 @@
 package com.hanbit.team03.core.vo;
 
 public class MovieVO {
+
 	private int movieId;
 	private String movieName;
-	private String director;
-	private String genre;
+	private String movieDirector;
+	private String movieGenre;
 
-	private String MovieFileid;
 	private String MovieFilePath;
+	private String MovieFileSize;
 
-
-
-	public String getMovieFileid() {
-		return MovieFileid;
-	}
-	public void setMovieFileid(String movieFileid) {
-		MovieFileid = movieFileid;
-	}
-	public String getMovieFilePath() {
-		return MovieFilePath;
-	}
-	public void setMovieFilePath(String movieFilePath) {
-		MovieFilePath = movieFilePath;
-	}
-	public String getDirector() {
-		return director;
-	}
-	public void setDirector(String director) {
-		this.director = director;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
 	public int getMovieId() {
 		return movieId;
 	}
@@ -47,6 +22,33 @@ public class MovieVO {
 	public void setMovieName(String movieName) {
 		this.movieName = movieName;
 	}
+	public String getMovieDirector() {
+		return movieDirector;
+	}
+	public void setMovieDirector(String movieDirector) {
+		this.movieDirector = movieDirector;
+	}
+	public String getMovieGenre() {
+		return movieGenre;
+	}
+	public void setMovieGenre(String movieGenre) {
+		this.movieGenre = movieGenre;
+	}
+	public String getMovieFilePath() {
+		return MovieFilePath;
+	}
+	public void setMovieFilePath(String movieFilePath) {
+		MovieFilePath = movieFilePath;
+	}
+	public String getMovieFileSize() {
+		return MovieFileSize;
+	}
+	public void setMovieFileSize(String movieFileSize) {
+		MovieFileSize = movieFileSize;
+	}
+
+
+
 
 
 }

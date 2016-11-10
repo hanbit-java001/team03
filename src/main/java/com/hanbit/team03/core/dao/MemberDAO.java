@@ -1,6 +1,7 @@
 package com.hanbit.team03.core.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -20,12 +21,14 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int countMember(String email) {
-		return sqlSession.selectOne("member.countMember", email);
-	}
 
 	public int insertMember(MemberVO member) {
+
 		return sqlSession.insert("member.insertMember", member);
+	}
+
+	public int countMember(String email) {
+		return sqlSession.selectOne("member.countMember", email);
 	}
 
 	public MemberVO selectMember(String email) {
@@ -57,4 +60,6 @@ public class MemberDAO {
 	public int selectNextMemberId() {
 		return sqlSession.selectOne("member.selectNextMemberId");
 	}
+
+
 }

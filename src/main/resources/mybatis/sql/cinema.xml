@@ -4,20 +4,25 @@
 <mapper namespace="cinema">
 
 	<select id="selectCinemas" parameterType="String" resultType="CinemaVO">
-		SELECT CINEMA_NAME
-		  FROM CINEMA
+		SELECT DISTINCT c.CINEMA_ID, c.CINEMA_NAME, c.CINEMAFILE_PATH
+		FROM CINEMA c
 	</select>
 
-	<select id="selectCinema" parameterType="string" resultType="CinemaVO">
-		SELECT CINEMA_NAME, CINEMA_ADDRESS
+	<select id="selectCinemaNameId" parameterType="string" resultType="CinemaVO">
+		SELECT CINEMA_NAME, CINEMA_ID
 		FROM CINEMA
-		WHERE CINEMA_ID = #{cinemaId}
 	</select>
 
-	<select id="selectCinemaFile" resultType="CinemaVO">
-		SELECT c.CINEMA_NAME, p.CINEMAFILE_PATH
-		FROM CINEMA c,CINEMAFILE p
-		WHERE c.CINEMA_ID = p.CINEMAFILE_ID
+	<select id="selectDetaileCinema" parameterType="int" resultType="CinemaVO">
+		SELECT DISTINCT c.CINEMA_ID, c.CINEMA_NAME, c.CINEMAFILE_PATH
+		FROM CINEMA c
+		WHERE c.CINEMA_ID = #{cinemaId}
 	</select>
+
+<!-- 	<select id="selectCinemaFile" resultType="CinemaVO"> -->
+<!-- 		SELECT c.CINEMA_ID, c.CINEMA_NAME, p.CINEMAFILE_PATH -->
+<!-- 		FROM CINEMA c,CINEMAFILE p -->
+<!-- 		WHERE c.CINEMA_ID = p.CINEMAFILE_ID -->
+<!-- 	</select> -->
 
 </mapper>

@@ -37,11 +37,20 @@ public class MovieController {
 		return movieService.getMovies();
 	}
 
-	@RequestMapping(value="/api/movie/{movieId}", method=RequestMethod.GET)
-	@ResponseBody
-	public MovieVO getMovie(@PathVariable("movieId") String movieId) {
 
-		return movieService.getMovieDetails(movieId);
+	@RequestMapping(value="/api/movie/list2", method=RequestMethod.GET)
+	@ResponseBody
+	public List<MovieVO> getMovieNameId() {
+		return movieService.getMovieNameId();
+	}
+
+
+	@RequestMapping(value="/api/movie/detail", method=RequestMethod.GET)
+	@ResponseBody
+	public MovieVO getMovieDetails(@RequestParam("movieId") int movieId){
+		MovieVO result = movieService.getMovieDetails(movieId);
+
+		return result;
 	}
 
 }

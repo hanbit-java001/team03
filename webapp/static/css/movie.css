@@ -1,28 +1,41 @@
 .main-content {
-
+	text-align:center;
+	background-color: #FCFCF0;
+	padding-bottom: 100px;
+	padding-top: 20px;
 
 }
 
-.main-content ul {
-
+.movietotal {
+	text-align:center;
+	width:200px;
+	display: inline-block;
+	letter-spacing: 2px;
+	font-family: arial;
+	font-size: 15px;
 }
 
-.main-content ul li {
-	text-align: center;
-	font-size: 30px;
+.movielink {
+	cursor:pointer;
+}
+
+#moviename {
+	margin: 100px;
+}
+
+.movielistdetail {
+	width:100%;
+	text-align:center;
+	display: inline-block;
+}
+
+.movielistdetails li {
 	list-style: none;
-	color:gray;
+	font-size: 20px;
 }
 
-.movie-name li {
-	color:#AEC6CF !important;
-	height:200px;
-	display: inline-block;
-	position: relative;
-}
-
-.movie-body {
-	display: inline-block;
-	height:250px;
-	width:170px;
+.back {
+	font-size: 15px;
+	text-decoration: underline;
+	cursor: pointer;
 }

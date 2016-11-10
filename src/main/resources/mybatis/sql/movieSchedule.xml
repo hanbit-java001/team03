@@ -32,31 +32,58 @@
 <!-- 	]]> -->
 <!-- 	</select> -->
 
+<!-- 임시로 주석 아래꺼 완벽한 쿼리문이긴함 -->
+<!-- 	<select id="selectCountReservedSeat" parameterType="map" resultType="SelectCountReservedSeatVO"> -->
+<!-- 	<![CDATA[ -->
+<!-- 		SELECT result.THEATER_ID, result.THEATER_NAME, result.START_TIME, result.TOTAL_SEAT, result.TIME_ID, COUNT(r.RESERVE_ID) AS RESERVED_SEAT -->
+<!-- 		  FROM RESERVATION r RIGHT JOIN ( -->
+<!-- 			SELECT cttm.THEATER_ID, THEATER_NAME, START_TIME, COUNT(s.SEAT_ID) AS TOTAL_SEAT, cttm.TIME_ID -->
+<!-- 			FROM -->
+<!-- 				( -->
+<!-- 					SELECT THEATER_NAME, START_TIME, ctt.THEATER_ID, ctt.TIME_ID -->
+<!-- 					  FROM ( -->
+<!-- 						SELECT THEATER_NAME, t.THEATER_ID, MOVIE_ID, START_TIME, TIME_ID -->
+<!-- 						  FROM	( -->
+<!-- 							SELECT THEATER_NAME, THEATER_ID -->
+<!-- 							  FROM THEATER T -->
+<!-- 							 WHERE T.CINEMA_ID = #{cinemaId} -->
+<!-- 							) ct, TIMETABLE t -->
+<!-- 						 WHERE ct.THEATER_ID = t.THEATER_ID -->
+<!-- 						) ctt, MOVIE m -->
+<!-- 					 WHERE #{movieId}=ctt.MOVIE_ID -->
+<!-- 					   AND #{movieId}= m.MOVIE_ID -->
+<!-- 				)cttm, SEAT s -->
+<!-- 			WHERE cttm.THEATER_ID = s.THEATER_ID -->
+<!-- 			GROUP BY cttm.THEATER_ID, THEATER_NAME, START_TIME, cttm.TIME_ID -->
+<!-- 		) result -->
+<!-- 	   ON r.TIME_ID = result.TIME_ID -->
+<!-- 	   GROUP BY result.THEATER_ID, result.THEATER_NAME, result.START_TIME, result.TOTAL_SEAT, result.TIME_ID ; -->
+<!-- 	]]> -->
+<!-- 	</select> -->
+
 	<select id="selectCountReservedSeat" parameterType="map" resultType="SelectCountReservedSeatVO">
 	<![CDATA[
-		SELECT result.THEATER_ID, result.THEATER_NAME, result.START_TIME, result.TOTAL_SEAT, result.TIME_ID, COUNT(r.RESERVE_ID) AS RESERVED_SEAT
-		  FROM RESERVATION r RIGHT JOIN (
-			SELECT cttm.THEATER_ID, THEATER_NAME, START_TIME, COUNT(s.SEAT_ID) AS TOTAL_SEAT, cttm.TIME_ID
-			FROM
-				(
-					SELECT THEATER_NAME, START_TIME, ctt.THEATER_ID, ctt.TIME_ID
-					  FROM (
-						SELECT THEATER_NAME, t.THEATER_ID, MOVIE_ID, START_TIME, TIME_ID
-						  FROM	(
-							SELECT THEATER_NAME, THEATER_ID
-							  FROM THEATER T
-							 WHERE T.CINEMA_ID = #{cinemaId}
-							) ct, TIMETABLE t
-						 WHERE ct.THEATER_ID = t.THEATER_ID
-						) ctt, MOVIE m
-					 WHERE #{movieId}=ctt.MOVIE_ID
-					   AND #{movieId}= m.MOVIE_ID
-				)cttm, SEAT s
-			WHERE cttm.THEATER_ID = s.THEATER_ID
-			GROUP BY cttm.THEATER_ID, THEATER_NAME, START_TIME, cttm.TIME_ID
-		) result
-	   ON r.TIME_ID = result.TIME_ID
-	   GROUP BY result.THEATER_ID, result.THEATER_NAME, result.START_TIME, result.TOTAL_SEAT, result.TIME_ID ;
-	]]>
+	SELECT result.THEATER_ID AS theaterId, result.THEATER_NAME AS theaterName, result.TIME_ID AS timeId, result.TOTAL_SEAT AS totalSeat, result.START_TIME AS startTime, COUNT(r.SEAT_ID) AS reservedSeat
+	FROM RESERVATION r RIGHT JOIN (
+		SELECT tmtter.THEATER_ID, tmtter.THEATER_NAME, tmtter.TIME_ID, tmtter.START_TIME, COUNT(s.SEAT_ID) AS TOTAL_SEAT
+		FROM(
+			SELECT tter.THEATER_ID, tter.THEATER_NAME, tm.TIME_ID, tm.START_TIME
+			FROM(
+					SELECT	tt.THEATER_ID, tt.TIME_ID,  tt.START_TIME
+					FROM (
+							SELECT t.THEATER_ID, t.MOVIE_ID, t.TIME_ID, t.START_TIME
+							FROM TIMETABLE t
+							WHERE t.START_TIME LIKE '20160929%'
+							)tt
+					WHERE tt.MOVIE_ID = #{movieId}
+					)tm , THEATER tter
+			WHERE tter.CINEMA_ID = #{cinemaId} and tm.THEATER_ID = tter.THEATER_ID
+			) tmtter, SEAT s
+		WHERE tmtter.THEATER_ID = s.THEATER_ID
+		GROUP BY tmtter.THEATER_ID, tmtter.TIME_ID, tmtter.THEATER_NAME, tmtter.START_TIME) result
+ 	ON r.TIME_ID = result.TIME_ID AND r.THEATER_ID = result.THEATER_ID
+ 	GROUP BY result.THEATER_ID, result.THEATER_NAME, result.START_TIME, result.TOTAL_SEAT, result.TIME_ID
+ 	]]>
 	</select>
+
 </mapper>
